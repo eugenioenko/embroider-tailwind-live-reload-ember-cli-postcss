@@ -1,7 +1,21 @@
 # embroider-tailwindcss-live-reload-purgecss
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This repository is a minimal reproduction of ember app with embroider and tailwindcss using ember-cli-postcss. 
+It contains an issue with live-reload for css not working
+
+
+**Repro steps**
+- start dev environment `npm run start`
+- ones the app loaded modify `/app/templates/application.hbs` to inlcude new tailwind utility class
+- wait for app to reload in the browser
+**Expected**
+- The new added utility classes are applied
+**Observed**
+- The new utility classes are not applied and an app restart is requried
+
+**Notes**
+postcssOptions do include `*.hbs` in the case
+https://github.com/eugenioenko/embroider-tailwind-live-reload-ember-cli-postcss/blob/676739a1e0dc1e47e56cdcc9f14b055bc9a6481d/ember-cli-build.js#L10
 
 ## Prerequisites
 
